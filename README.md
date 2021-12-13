@@ -19,10 +19,10 @@ the [Alm lab](https://web.mit.edu/almlab/) at MIT
 [(Wu et al., 2020)](https://journals.asm.org/doi/full/10.1128/mSystems.00614-20) 
 [(Wu et al., 2021)](https://www.medrxiv.org/content/10.1101/2021.03.10.21253235v2)
 In June 2020, we transitioned to a full-service offering and
-currently have over 170 participating locations regularly monitoring
+currently have over 150 participating locations regularly monitoring
 SARS-CoV-2 wastewater concentrations in their communities on a weekly or
 monthly basis. As a result of this effort, we have generated a
-wastewater SARS-CoV-2 dataset consisting of over 18,000 samples.
+wastewater SARS-CoV-2 dataset consisting of over 17,000 samples.
 
 Recently, Biobot
 [was selected](https://biobotanalytics.medium.com/biobot-launches-national-wastewater-monitoring-project-2968a5997af)
