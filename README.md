@@ -1,16 +1,15 @@
 Nationwide Wastewater Monitoring Network
 ========================================
 
-This GitHub repo provides the underlying source data for the Nationwide
-Wastewater Monitoring Network data visualizations at
-[biobot.io/data](http://biobot.io/data).
-We provide both Biobot-generated wastewater SARS-CoV-2 concentrations
-and the associated clinical data used as comparison.
+This GitHub repo is an archive of the underlying source data for the Nationwide Wastewater Monitoring Network data visualizations that were live at
+[biobot.io/data](http://biobot.io/data) from May 2021 - January 2022.
+We provided both Biobot-generated wastewater SARS-CoV-2 concentrations
+and the associated clinical data used as comparison. The data contained in this archive reflects wastewater samples taken March 04, 2020 - January 26, 2022.
 
 About the data
 --------------
 
-Biobot\'s data is currently the largest publicly available dataset on
+Biobot\'s data is the largest publicly available dataset on
 SARS-CoV-2 concentrations in wastewater.
 
 We first launched a *pro bono* campaign to monitor COVID-19 in
@@ -24,12 +23,12 @@ SARS-CoV-2 wastewater concentrations in their communities on a weekly or
 monthly basis. As a result of this effort, we have generated a
 wastewater SARS-CoV-2 dataset consisting of over 17,000 samples.
 
-Recently, Biobot
+In May 2021, Biobot
 [was selected](https://biobotanalytics.medium.com/biobot-launches-national-wastewater-monitoring-project-2968a5997af)
 by the US Department of Health and Human Services to scale
 wastewater-based monitoring nationwide. As part of this program, Biobot
-will expand its wastewater monitoring efforts to 30% of the US
-population, including many additional wastewater utilities which are not
+expanded its wastewater monitoring efforts to 30% of the US
+population, including many additional wastewater utilities which were not
 already participating in wastewater surveillance.
 
 Wastewater data
@@ -257,7 +256,7 @@ Collaborations
 If you are interested in an academic collaboration using this data,
 please reach out to
 [mariana\@biobot.io](mailto:mariana@biobot.io) and
-[claire\@biobot.io](mailto:claire@biobot.io).
+[claire\@biobot.io](mailto:claire@biobot.io). If you are interested in accessing more recent data visible on [https://biobot.io/data/](biobot.io/data), please [https://biobot.io/data-access/](get in touch).
 
 Support & questions
 -------------------
