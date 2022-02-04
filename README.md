@@ -255,8 +255,7 @@ Collaborations
 
 If you are interested in an academic collaboration using this data,
 please reach out to
-[mariana\@biobot.io](mailto:mariana@biobot.io) and
-[claire\@biobot.io](mailto:claire@biobot.io). If you are interested in accessing more recent data visible on [https://biobot.io/data/](biobot.io/data), please [https://biobot.io/data-access/](get in touch).
+[mariana\@biobot.io](mailto:mariana@biobot.io). If you are interested in accessing more recent data visible on [https://biobot.io/data/](biobot.io/data), please [https://biobot.io/data-access/](get in touch).
 
 Support & questions
 -------------------
