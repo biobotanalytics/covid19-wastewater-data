@@ -1,10 +1,10 @@
 Nationwide Wastewater Monitoring Network
 ========================================
 
-This GitHub repo is an archive of the underlying source data for the Nationwide Wastewater Monitoring Network data visualizations that were live at
-[biobot.io/data](http://biobot.io/data) from May 2021 - January 2022.
-We provided both Biobot-generated wastewater SARS-CoV-2 concentrations
-and the associated clinical data used as comparison. The data contained in this archive reflects wastewater samples taken March 04, 2020 - January 26, 2022.
+This GitHub repo provides the underlying source data for the Nationwide 
+Wastewater Monitoring Network data visualizations at [biobot.io/data](http://biobot.io/data). 
+We provide both Biobot-generated wastewater SARS-CoV-2 concentrations and the associated 
+clinical data used as comparison.
 
 About the data
 --------------
