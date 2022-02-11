@@ -18,10 +18,10 @@ the [Alm lab](https://web.mit.edu/almlab/) at MIT
 [(Wu et al., 2020)](https://journals.asm.org/doi/full/10.1128/mSystems.00614-20) 
 [(Wu et al., 2021)](https://www.medrxiv.org/content/10.1101/2021.03.10.21253235v2)
 In June 2020, we transitioned to a full-service offering and
-currently have over 150 participating locations regularly monitoring
+currently have over 200 participating locations regularly monitoring
 SARS-CoV-2 wastewater concentrations in their communities on a weekly or
-monthly basis. As a result of this effort, we have generated a
-wastewater SARS-CoV-2 dataset consisting of over 17,000 samples.
+monthly basis. As a result of this effort, we have generated a wastewater 
+SARS-CoV-2 dataset consisting of nearly 20,000 samples.
 
 In May 2021, Biobot
 [was selected](https://biobotanalytics.medium.com/biobot-launches-national-wastewater-monitoring-project-2968a5997af)
@@ -31,10 +31,15 @@ expanded its wastewater monitoring efforts to 30% of the US
 population, including many additional wastewater utilities which were not
 already participating in wastewater surveillance.
 
+In January 2022, Biobot launched the Biobot Network of Wastewater 
+Treatment Plants, a no-cost program for any treatment facility in 
+the U.S. to submit a weekly sample and see their community’s SARS-CoV-2 
+concentration in wastewater, as well as the latest information on variants.
+
 Wastewater data
 ---------------
 
-The wastewater data shows SARS-CoV-2 normalized virus concentrations
+The wastewater data shows SARS-CoV-2 effective virus concentrations
 measured by Biobot in samples from wastewater treatment facilities
 across the United States. To preserve the anonymity of our participating
 utilities and to improve their representativeness, we present aggregated
@@ -52,10 +57,10 @@ data:
     associated with the single county that the wastewater operator has
     provided as being the plant's primary service area.
 
-3.  For each geographic unit, we smooth the weekly values using a
-    3-value rolling unweighted average. If the geographic unit does not
-    have a sample every week, then this 3-value window can include
-    samples outside of a 3-week window.
+3.  For each geographic unit, we smooth the weekly values using a 3-value 
+    rolling average that gives higher weight to that week's measurement. If the 
+    geographic unit does not have a sample every week, then this 3-value window 
+    can include samples outside of a 3-week window.
 
 We use the weighted average scheme for aggregating values across
 sampling locations as a compromise to achieve multiple goals:
@@ -72,10 +77,9 @@ sampling locations as a compromise to achieve multiple goals:
     statistical properties of the average.
 
 We include data from all Biobot's sampling locations in the nationwide
-and regional aggregate results. In the individual county plots, we
-report data from counties that have sampling locations with at least 22
-weeks of data and whose sampling locations represent a total of more
-than 10,000 people.
+and regional aggregate results. We highlight a subset of counties in our dataset, 
+representing either counties sampling for longer continuous periods or those 
+participating in The Biobot Network.
 
 Clinical data
 -------------
@@ -123,8 +127,8 @@ Data dictionary
     middle of the work week, and most of our samples are collected
     between Monday and Friday. (YYYY-MM-DD)
 
--   normalized\_concentration\_rolling\_average: three-sample average of
-    weekly normalized concentrations (normalized
+-   effective\_concentration\_rolling\_average: three-sample average of
+    weekly normalized concentrations (effective
     genome copies per mL of wastewater)
 
 -   population: sum of sewershed populations for all constituent
@@ -149,9 +153,9 @@ Data dictionary
 
 -   state: two-letter abbreviation of the US state (str)
 
--   county\_fips\_code: county FIPS code provided by USA facts (str)
+-   fipscode: county FIPS code provided by USA facts (str)
 
--   county\_name: Name of the county (str)
+-   name: Name of the county (str)
 
 **wastewater\_by\_county.csv**
 
@@ -160,8 +164,8 @@ Data dictionary
     middle of the work week, and most of our samples are collected
     between Monday and Friday. (YYYY-MM-DD)
 
--   normalized\_concentration\_rolling\_average: three-sample average of
-    weekly normalized concentrations (normalized
+-   effective\_concentration\_rolling\_average: three-sample average of
+    weekly normalized concentrations (effective
     genome copies per mL of wastewater)
 
 -   population: sum of sewershed populations for all constituent
@@ -173,72 +177,84 @@ Data dictionary
 
 -   state: two-letter abbreviation of the US state (str)
 
--   county\_fips\_code: county FIPS code provided by USA facts (str)
+-   fipscode: county FIPS code provided by USA facts (str)
 
--   county\_name: Name of the county (str)
+-   name: Name of the county (str)
 
 Lab methods
 -----------
 
-Our methods for detecting SARS-CoV-2 in sewage are adapted from CDC
-protocols. Our approach relies on detecting genetic fragments of the
-virus that are excreted in stool by qPCR analysis. Here, we show
-SARS-CoV-2 concentrations after normalization to a fecal virus marker
-(PMMoV).
+Our methods for detecting SARS-CoV-2 in sewage are adapted from CDC 
+protocols. Our approach relies on detecting genetic fragments of the 
+virus that are excreted in stool by qPCR analysis. Here, we show 
+SARS-CoV-2 effective concentrations, which account for factors 
+including population size, wastewater flow rates, and dilution. 
+Read more about effective concentration in this [whitepaper](https://biobot.io/wp-content/uploads/2022/02/2022-01-White-paper-Effective-concentration.pdf).
 
-Our lab methods have changed over time to improve sample processing
-time, throughput, and sensitivity, also accounting for supply-chain
-availability. In our first method, samples for analysis were first
-filtered to remove large particulate matter using a 0.2uM vacuum-driven
-filter and used PEG-salt precipitation to concentrate viruses from 40mL
-of wastewater, as described in Wu et al. 2020. Resulting pellets were
-resuspended in TRIzol, and RNA was purified via phenol-chloroform
-extraction. RNA samples were first reverse transcribed and then assayed
-by qPCR using SARS-CoV-2 nucleocapsid gene (N1 and N2 regions), and
-PMMoV amplicons 
+Our lab methods have changed over time to improve sample processing 
+time, throughput, and sensitivity, also accounting for supply-chain 
+availability. In all methods, we start by heat-inactivating potentially 
+infectious particles by treatment at 60C for 40-60 minutes, depending on 
+the protocol. In our first method, samples for analysis were first filtered 
+to remove large particulate matter using a 0.2uM vacuum-driven filter and 
+used PEG-salt precipitation to concentrate viruses from 40mL of wastewater, 
+as described in Wu et al. 2020. Resulting pellets were resuspended in TRIzol, 
+and RNA was purified via phenol-chloroform extraction. RNA samples were first 
+reverse transcribed and then assayed by qPCR using SARS-CoV-2 nucleocapsid 
+gene (N1 and N2 regions), and PMMoV amplicons  
 ([CDC 2020](https://www.cdc.gov/coronavirus/2019-ncov/lab/rt-pcr-panel-primer-probes.html); 
 [Zhang et al., 2006](https://doi.org/10.1371/journal.pbio.0040003)).
 
-In June 2020, we switched to our current protocol which uses Amicon
+In June 2020, we switched to a protocol which used Amicon
 Ultra-15 centrifugal ultrafiltration units to concentrate 15mL of
-wastewater approximately 100x. Viral particles in this concentrate are
-immediately lysed by adding AVL Buffer containing carrier RNA to the
-Amicon unit before transfer and \>10-minute incubation. To adjust
-binding conditions, 100% ethanol was added to the lysate, and RNA was
-extracted using RNeasy Mini columns or cassettes. For a subset of
-samples, we processed 30 mL of wastewater across two separate Amicon
-units, extracted each separately, and pooled the duplicate RNA extracts
-together prior to analysis. RNA samples eluted from the RNeasy kit were
-subjected to one-step RT-qPCR analysis in triplicate for N1, N2, and
-PMMoV amplicons. Cts were called from raw fluorescence data using the
-Cy0 algorithm from the qpcR package (v1.4-1) in R 
+wastewater approximately 100x. Viral particles in this concentrate 
+were immediately lysed by adding AVL Buffer containing carrier RNA 
+to the Amicon unit before transfer and \>10 minute incubation. To adjust 
+binding conditions, 100% ethanol was added to the lysate, and RNA was 
+extracted using RNeasy Mini columns or cassettes. For a subset of samples, 
+we processed 30 mL of wastewater across two separate Amicon units, 
+extracted each separately, and pooled the duplicate RNA extracts 
+together prior to analysis. RNA samples eluted from the RNeasy kit 
+were subjected to one-step RT-qPCR analysis in triplicate for N1, N2, 
+PMMoV and other control amplicons. Cts were called from raw fluorescence 
+data using the Cy0 algorithm from the qpcR package (v1.4-1) in R 
 ([Guescini et al., 2008](https://doi.org/10.1186/1471-2105-9-326)),
 and manually inspected for agreement with the raw traces in the
 native Biorad software.
 
-In both methods, we ran a variety of laboratory controls. Positive
-synthetic SARS-CoV-2 RNA controls were included on every qPCR plate. Two
-no-template controls were included on every qPCR plate. For positive and
-negative controls, Ct values outside the expected ranges triggered a
-re-run of the qPCR plate. One set of extraction blank controls was also
-run each day. Matrix inhibition was assessed manually by reviewing the
-raw qPCR curves. Finally, we used PMMoV as a proxy measure for per-plate
-recovery and flagged any qPCR plates with unusually low PMMoV values for
-further review and potential plate re-run. Only results which passed all
-quality controls are included in this dataset.
+In February 2022, we adopted our current protocol which uses Ceres 
+NanoTrap particles (SKU 44202) to capture viruses essentially as 
+described in the Ceres Nanosciences APP-030 protocol. Viral particles 
+are captured from 9.6mL of wastewater, immediately lysed with the MagMAX 
+Lysis Solution (Applied Biosystems A52606), and 400uL of the resulting 
+lysate are used for nucleic acid isolation with MagMAX DNA/RNA binding 
+beads. Samples eluted from the magnetic beads were subjected to one-step 
+RT-qPCR analysis as described above.
 
-In addition to these laboratory controls, we implemented a thorough data
-review process, in which results were manually reviewed if they failed
-to meet certain additional data-driven criteria. During the manual
-review process, we inspected individual replicates of qPCR and timelines
-of SARS-CoV-2 and PMMV concentrations. A small fraction of samples that
-underwent the review process were flagged for a lab rerun. Reruns were
-done in duplicates if capacity allowed, and always using a different 50
-mL tube of sewage. About 120 samples (approximately 2% of all samples)
-were re-run through that process. If a rerun differed substantially from
-the original result, the original result was discarded (10 out of 120
-reruns) and the rerun results are reported; if the rerun recapitulated
-the original result, the average of all results are reported.
+In all methods, we run a variety of laboratory controls. Positive synthetic 
+SARS-CoV-2 RNA controls are included on every qPCR plate. Two no-template 
+controls are included on every qPCR plate. For positive and negative controls, 
+Ct values outside the expected ranges triggers a re-run of the qPCR plate. 
+One set of extraction blank controls was also run each day. A recovery control 
+is spiked into every sample and measured in parallel to PMMoV. Matrix inhibition 
+is assessed manually by reviewing the raw qPCR curves and by an internal qPCR 
+control measured in parallel to PMMoV. Finally, we also use PMMoV as a proxy 
+measure for per-plate recovery, and flag any qPCR plates with unusually low 
+PMMoV values for further review and potential plate re-run. Only results which 
+pass all quality controls are included in this dataset.
+
+In addition to these laboratory controls, we implemented a thorough data 
+review process, in which results were manually reviewed if they failed 
+to meet certain additional data-driven criteria. During the manual review 
+process, we inspected individual replicates of qPCR and timelines of 
+SARS-CoV-2 and PMMoV concentrations. A small fraction of samples that 
+underwent the review process were flagged for a lab rerun. Reruns were 
+done in duplicates if capacity allowed, and always using a different 
+50 mL tube of sewage. About 120 samples (approximately 2% of all samples) 
+were re-run through that process. If a rerun differed substantially from 
+the original result, the original result was discarded (10 out of 120 reruns) 
+and the rerun results are reported; if the rerun recapitulated the original 
+result, the average of all results are reported.
 
 Authors and acknowledgment
 --------------------------
@@ -255,7 +271,7 @@ Collaborations
 
 If you are interested in an academic collaboration using this data,
 please reach out to
-[mariana\@biobot.io](mailto:mariana@biobot.io). If you are interested in accessing more recent data visible on [https://biobot.io/data/](biobot.io/data), please [https://biobot.io/data-access/](get in touch).
+[hello\@biobot.io](mailto:hello@biobot.io). If you are interested in accessing more recent data visible on [https://biobot.io/data/](biobot.io/data), please [https://biobot.io/data-access/](get in touch).
 
 Support & questions
 -------------------
