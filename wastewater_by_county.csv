@@ -1,4 +1,4 @@
-,sampling_week,normalized_concentration_rolling_average,population,region,state,name,fipscode
+,sampling_week,effective_concentration_rolling_average,population,region,state,name,fipscode
 0,2021-06-09,4.952360465671804,"30,000-100,000",South,AL,"Madison County, AL",01089
 1,2021-06-16,6.469658122038847,"30,000-100,000",South,AL,"Madison County, AL",01089
 2,2021-06-23,11.000615931082258,"30,000-100,000",South,AL,"Madison County, AL",01089
