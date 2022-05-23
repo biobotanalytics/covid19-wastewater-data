@@ -256,10 +256,18 @@ the original result, the original result was discarded (10 out of 120 reruns)
 and the rerun results are reported; if the rerun recapitulated the original 
 result, the average of all results are reported.
 
-Authors and acknowledgment
---------------------------
+Acknowledgment
+--------------
 This work could not have been possible without the support of the participating wastewater utilities; we thank the sampling operators and treatment plant facilities for their efforts and collaboration as we established and scaled our processes, and for agreeing to make this data available to the community. 
 
+Citation
+--------
+
+If you would like to use this data, please cite Biobot Analytics ([biobot.io/data](https://biobot.io/data/)).
+
+For academic publications, please cite the following paper:
+
+> Claire Duvallet, Fuqing Wu, Kyle A. McElroy, Maxim Imakaev, et al. "Nationwide Trends in COVID-19 Cases and SARS-CoV-2 RNA Wastewater Concentrations in the United States." ACS ES&T Water (2022). doi: [10.1021/acsestwater.1c00434](https://doi.org/10.1021/acsestwater.1c00434).
 
 License
 -------
