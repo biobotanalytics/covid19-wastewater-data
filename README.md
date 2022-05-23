@@ -127,7 +127,7 @@ Data dictionary
     middle of the work week, and most of our samples are collected
     between Monday and Friday. (YYYY-MM-DD)
 
--   effective\_concentration\_rolling\_average: three-sample average of
+-   effective\_concentration\_rolling\_average: three-sample, population-weighted average of
     weekly normalized concentrations (effective
     genome copies per mL of wastewater)
 
@@ -164,7 +164,7 @@ Data dictionary
     middle of the work week, and most of our samples are collected
     between Monday and Friday. (YYYY-MM-DD)
 
--   effective\_concentration\_rolling\_average: three-sample average of
+-   effective\_concentration\_rolling\_average: three-sample, population-weighted average of
     weekly normalized concentrations (effective
     genome copies per mL of wastewater)
 
