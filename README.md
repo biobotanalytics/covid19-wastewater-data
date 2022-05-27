@@ -131,9 +131,6 @@ Data dictionary
     weekly normalized concentrations (effective
     genome copies per mL of wastewater)
 
--   population: sum of sewershed populations for all constituent
-    sampling locations, binned to preserve anonymity (str, categorical)
-
 -   region: the US Census region that each data point is associated
     with. These regions are derived from Census regions. (str,
     categorical)
@@ -167,9 +164,6 @@ Data dictionary
 -   effective\_concentration\_rolling\_average: three-sample, population-weighted average of
     weekly normalized concentrations (effective
     genome copies per mL of wastewater)
-
--   population: sum of sewershed populations for all constituent
-    sampling locations, binned to preserve anonymity (str, categorical)
 
 -   region: the US Census region that each data point is associated
     with. These regions are derived from Census regions (str,
